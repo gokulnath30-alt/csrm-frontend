@@ -1,0 +1,310 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #090d1f;
+  background: #35205e 0,transparent 35%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 10% 10%, #35205e 0, transparent 35%),
+    radial-gradient(ellipse at 90% 80%, #123b59 0, transparent 35%),
+    #16203f;
+  color: #e9edff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Headings */
+
+h1, h2, h3, h4 {
+  color: #f8faff;
+  letter-spacing: -0.7px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 21px;
+  margin: 28px 0 16px;
+  font-weight: 700;
+}
+
+p {
+  color: #aab5d0;
+  line-height: 1.7;
+}
+
+/* Main application */
+
+#root > div {
+  width: 100%;
+  padding: 30px;
+}
+
+#root > div > h2 {
+  font-size: 28px;
+  margin: 0 0 16px;
+  background: linear-gradient(90deg, #a78bfa, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Login and register pages */
+
+#root > div:has(> input) {
+  width: min(440px, calc(100% - 32px));
+  margin: 9vh auto;
+  padding: 38px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  background: rgba(19, 26, 48, .82);
+  box-shadow: 0 25px 80px rgba(0,0,0,.45);
+  backdrop-filter: blur(22px);
+}
+
+#root > div:has(> input) h2 {
+  text-align: center;
+  margin: 0 0 28px;
+  font-size: 32px;
+}
+
+#root > div:has(> input) input,
+#root > div:has(> input) select {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 14px 16px;
+  border: 1px solid #303b59;
+  border-radius: 12px;
+  background: #10182d;
+  color: #fff;
+}
+
+/* Input fields */
+
+input, select {
+  font: inherit;
+  color: #e9edff;
+  background: #141d35;
+  border: 1px solid #303b59;
+  border-radius: 10px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border .2s, box-shadow .2s;
+}
+
+input::placeholder {
+  color: #7f8ba8;
+}
+
+input:focus, select:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139,92,246,.16);
+}
+
+select option {
+  background: #141d35;
+  color: white;
+}
+
+/* Buttons */
+
+button {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  padding: 11px 17px;
+  margin: 4px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(99,102,241,.18);
+  transition: transform .2s, filter .2s, box-shadow .2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  box-shadow: 0 8px 22px rgba(99,102,241,.3);
+}
+
+button:active {
+  transform: scale(.97);
+}
+
+/* Login/register secondary buttons */
+
+#root > div:has(> input) p button {
+  background: transparent;
+  color: #a78bfa;
+  box-shadow: none;
+  padding: 5px;
+}
+
+/* Dashboard panels */
+
+#root > div > p,
+#root > div > h3 {
+  position: relative;
+}
+
+#root > div > p:has(+ hr) {
+  padding: 16px 20px;
+  background: rgba(24,34,61,.8);
+  border: 1px solid #293653;
+  border-radius: 14px;
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 14px 0 30px;
+  overflow: hidden;
+  border: 1px solid #293653;
+  border-radius: 14px;
+  background: rgba(18,26,47,.88);
+  font-size: 13px;
+}
+
+th {
+  text-align: left;
+  color: #a78bfa;
+  background: #1b2541;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .8px;
+}
+
+th, td {
+  padding: 15px 16px;
+  border: 0;
+  border-bottom: 1px solid #29324b;
+}
+
+td {
+  color: #cbd5e1;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: rgba(132, 84, 243, 0.08);
+}
+
+/* Booking availability */
+
+.free {
+  background: rgba(16,185,129,.09);
+}
+
+.free td:nth-child(2) {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.taken {
+  background: rgba(244,63,94,.09);
+}
+
+.taken td:nth-child(2) {
+  color: #fb7185;
+  font-weight: 700;
+}
+
+/* Notifications and errors */
+
+.msg {
+  padding: 14px 17px;
+  margin: 10px 0;
+  color: #6ee7b7;
+  background: rgba(16,185,129,.10);
+  border: 1px solid rgba(16,185,129,.3);
+  border-radius: 11px;
+}
+
+.err {
+  color: #fb7185;
+  background: rgba(244,63,94,.09);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+
+
+hr {
+  border: 0;
+  border-top: 1px solid #1b2e57;
+  margin: 24px 0;
+}
+
+
+
+@media (max-width: 768px) {
+  #root > div {
+    padding: 16px;
+  }
+
+  #root > div:has(> input) {
+    margin: 7vh auto;
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+
+  input, select {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  #root > div:has(> input) {
+    padding: 20px;
+  }
+
+  button {
+    padding: 10px 12px;
+  }
+}
